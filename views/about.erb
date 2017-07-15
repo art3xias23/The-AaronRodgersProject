@@ -1,0 +1,19 @@
+<div style="color: #FFB612; background: #203731; opacity: 0.9;filter: alpha(opacity=50px)";><h2>About us</h2>
+<p style = "font-weigth: bold";>Konstantin Milchev is a student at Aberdeen University. He is currently doing a Msc in Information Technology. His first project is this website, thus if you wish to help out please show this to a friend.</p></div>
+
+<div id="map" style="width:40%;height:400px; position: center"></div>
+
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(57.166309, -2.098276);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 15};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+	
+	

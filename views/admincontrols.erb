@@ -1,0 +1,18 @@
+
+<h2 style = "text-align: center";>Admin controls page</h2>
+<p style = "text-align: center"><b>User list</b></p><br>
+<p style = "text-align: center">Username - DateJoined - Edit?<br>
+	<% @list2.each do |liste| %>
+ <article style = "text-align: center">
+ <p style = "color: maroon">
+ <%= liste.username %> - <%= liste.date_joined %> - <%= liste.edit %>
+<form action="/user/<%= liste.username %>" method="post" id="edit">
+<input type="hidden" name="_method" value="put">
+<input type="checkbox" name="edit" <%= "checked" if liste.edit %>>
+ <input type="submit" value="Allow Edit?">
+
+</form>
+<a href="/user/delete/<%= liste.username %>">Delete User?</a>
+ </p>
+ </article>
+<% end %> 

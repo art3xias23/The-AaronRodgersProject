@@ -1,0 +1,57 @@
+	<!DOCTYPE>
+	<html>
+	<head>
+		<meta charset = "UTF-8">
+			<meta name = "viewports" content = "width = device - width"/>
+			<meta name = "description" content = "My first wikiapp"/>
+			<meta name = "keywords" content = "wiki, test, app, blog"/>
+		<title>My first Wiki application</title>	
+		<link rel = "stylesheet" href= "/style.css" type = "text/css" />
+
+	</head>
+	<div class = "background">
+	<body>
+		
+		
+			<header>
+				<div class = "page_title">
+					<h1>The Aaron Rogers project</h1><br>
+					<a href= "http://www.packers.com/chat.html">Official Packers Website!</ahref>
+				<div class = "nav_bar">		
+					<a href = "/" class = "button">Home</a>
+					<a href = "/about" class = "button">About</a>
+					<a href = "/createaccount" class = "button">Register</a>
+					<a href = "/edit" class = "button">Edit</a>
+					<a href = "/quiz" class = "button">Questionaire</a>
+					<a href = "/video" class = "button">Video</a><br>
+					
+					
+					
+					
+					<%if $credentials%>
+						<%if $credentials[0] !=''%>
+							<br>Logged in as <p><br><a href="/user/<%=$credentials[0]%>"><b><%=$credentials[0]%></p></b><a><br>
+								<a href ="/logout" style = "color: red";>Logout</a><br>
+								<%if $credentials[0] =="Admin"%>
+									<a href = "/admincontrols" class = "button">Users</a>
+								<%end%>
+							<%else%>
+								<a href= "/login" class = "button">Login</a>
+							<%end%>
+							<%else%>
+							<a href = "/login" class = "button">Login</a>
+							<%end%>
+							
+				</div>				
+			</header>
+			
+				<%=yield%>
+			
+			<div class = "footer">
+			<footer>
+				<p>Copyright 2016: Konstantin Milchev 51663558</p>
+			</footer>
+			</div>
+		
+	</body>
+	
